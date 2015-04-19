@@ -1,11 +1,11 @@
 {
-    "name": "ddedic/:package_name",
-    "description": ":package_description",
+    "name": "ddedic/veemo-themes",
+    "description": "Veemo Themes - core package. Frontend / Backend theme management. Layouts, partials, assets. It works with veemo-modules package.",
     "keywords": [
         "veemo",
-        ":package_name"
+        "veemo-themes"
     ],
-    "homepage": "https://github.com/ddedic/:package_name",
+    "homepage": "https://github.com/ddedic/veemo-themes",
     "license": "MIT",
     "authors": [
         {
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Veemo\\XXXX\\": "src"
+            "Veemo\\Themes\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Veemo\\XXXX\\Test\\": "tests"
+            "Veemo\\Themes\\Test\\": "tests"
         }
     },
     "extra": {
