@@ -25,7 +25,10 @@
     "autoload": {
         "psr-4": {
             "Veemo\\Themes\\": "src"
-        }
+        },
+        "classmap": [
+            "src/Exceptions/Exceptions.php"
+        ],
     },
     "autoload-dev": {
         "psr-4": {
