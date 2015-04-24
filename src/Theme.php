@@ -340,8 +340,50 @@ class Theme
         return $content;
     }
 
+
     /**
-     * Find view location.
+     * Return real location of the view
+     *
+     * @param string $view
+     * @param bool $realpath
+     * @return View
+     */
+    public function locate($view, $realpath = false)
+    {
+        $viewNamespace = null;
+
+        // MAIN THEME / PARENT THEME
+        $views['theme'] = $this->getThemeNamespace($view);
+
+        // MODULE
+        $views['module'] = $this->getModuleView($view);
+
+        // BASE
+        $views['base'] = $view;
+
+
+        foreach ($views as $view) {
+
+            if ($this->viewFactory->exists($view)) {
+                $viewNamespace = $view;
+                break;
+            }
+        }
+
+        if ($viewNamespace == null) {
+            throw new UnknownViewFileException(("Theme [$this->active] View [$view] not found."));
+        }
+
+
+        if ($this->viewFactory->exists($view)) {
+            return ($realpath) ? $this->viewFactory->getFinder()->find($view) : $view;
+        }
+
+    }
+
+
+    /**
+     * Find view location. (Could throw undefined variable, because it renders content before)
      *
      * @param  boolean $realpath
      * @return string

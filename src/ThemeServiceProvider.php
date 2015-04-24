@@ -52,17 +52,6 @@ class ThemeServiceProvider extends ServiceProvider
 
 
 
-        // Register commands
-        /*
-        $this->registerThemeGenerator();
-        $this->registerThemeDestroy();
-
-        // Assign commands.
-        $this->commands(
-            'veemo.theme.create',
-            'veemo.theme.destroy'
-        );
-        */
     }
 
 
@@ -119,33 +108,6 @@ class ThemeServiceProvider extends ServiceProvider
     }
 
 
-
-
-    /**
-     * Register generator of theme.
-     *
-     * @return void
-     */
-    public function registerThemeGenerator()
-    {
-        $this->app['veemo.theme.create'] = $this->app->share(function ($app) {
-            return new Commands\ThemeGeneratorCommand($app['config'], $app['files']);
-        });
-    }
-
-
-    /**
-     * Register theme destroy.
-     *
-     * @return void
-     */
-    public function registerThemeDestroy()
-    {
-        $this->app['veemo.theme.destroy'] = $this->app->share(function ($app) {
-            //return new Commands\ThemeDestroyCommand($app['config'], $app['files']);
-            return;
-        });
-    }
 
     /**
      * Get the services provided by the provider.
