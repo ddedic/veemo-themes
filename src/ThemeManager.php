@@ -15,7 +15,7 @@ use Veemo\Themes\Adapters\ThemeManagerAdapterInterface;
 
 /**
  * Class ThemeManager
- * @package Veemo\Core\Themes
+ * @package Veemo\Themes
  */
 class ThemeManager
 {
