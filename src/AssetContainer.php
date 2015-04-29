@@ -247,7 +247,7 @@ class AssetContainer
      */
     public function module($name = null)
     {
-        if (app('Veemo\Modules\Modules')) {
+        if (app('veemo.modules')) {
 
             $this->module = $name;
 
