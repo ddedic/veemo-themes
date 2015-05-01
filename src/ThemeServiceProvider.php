@@ -92,9 +92,6 @@ class ThemeServiceProvider extends ServiceProvider
             return new Theme($app['veemo.theme.manager'],$app['files'], $app['config'], $app['events'], $app['view'], $app['veemo.asset']);
         });
 
-        $this->app->booting(function ($app) {
-            //$app['veemo.themes']->register();
-        });
 
     }
 
